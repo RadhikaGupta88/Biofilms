@@ -1,7 +1,13 @@
 
-from include import *
-from labelled_regions import label_regions, characterise_regions, create_contours
-from radius_vs_intensity import txt_to_list
+import matplotlib.pyplot as plt
+import math
+from skimage.io import imread
+from src.labelled_regions import (characterise_regions, create_contours,
+                              label_regions)
+from src.radius_vs_intensity import txt_to_list
+
+from src.constants import BUCKLING_PATH
+
 
 def characterise_biofilm_image(stack, slice_no, type = 0):
     #type 0 is brightfield and type 1 is biolum
@@ -39,7 +45,8 @@ def characterise_biofilm_image(stack, slice_no, type = 0):
 
 def characterise_both_biofilm_images(stack_n, stack_b, slice_no_b):
     #type 0 is brightfield and type 1 is biolum
-    slice_no_n = int(slice_no_b * 1.403726708)
+    STACK_B_TO_N_RATIO = len(stack_b) / len(stack_n)
+    slice_no_n = int(slice_no_b * STACK_B_TO_N_RATIO)
     slice_n = stack_n[slice_no_n]
     slice_b = stack_b[slice_no_b]
 
@@ -59,14 +66,12 @@ def characterise_both_biofilm_images(stack_n, stack_b, slice_no_b):
     plt.gca().set_aspect('equal')
     plt.show()
 
-   
-
 
 
 slice = 130
 
-r = imread('c:/Cambridge/Mechanics_of_biofilm/algorithm for clear images/buckling/200920_normallight_nobg_edges_gaussblur_enhance_inverted.tif')
-s = imread('c:/Cambridge/Mechanics_of_biofilm/algorithm for clear images/buckling/200920_biolight_nobg_nooutliers_despeckle_enhance.tif')
+r = imread(BUCKLING_PATH / "200920_normallight_nobg_edges_gaussblur_enhance_inverted.tif")
+s = imread(BUCKLING_PATH / "200920_biolight_nobg_nooutliers_despeckle_enhance.tif"s)
 #characterise_biofilm_image(r, int(slice* 1.403726708), 0)
 #characterise_biofilm_image(s, slice, 1)
 

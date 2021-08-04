@@ -1,6 +1,7 @@
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
 from skimage import io
+
 
 def intensity_array_from_stack(stack):
     image = io.imread(stack)

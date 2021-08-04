@@ -1,4 +1,5 @@
 from include import *
+
 #
 # stack_b = imread('c:/Cambridge/Mechanics of biofilm/algorithm for clear images/biolight_gb.tif')
 # stack_n = imread('c:/Cambridge/Mechanics of biofilm/algorithm for clear images/normallight_edge_gb.tif')

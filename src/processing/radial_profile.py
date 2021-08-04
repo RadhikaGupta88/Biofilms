@@ -1,5 +1,6 @@
-from include import *
-from radius_vs_intensity import txt_to_list
+import numpy as np
+from src.processing.txt_loading import txt_to_list
+
 
 def radial_profile(data, center):
     y, x = np.indices((data.shape))
@@ -9,7 +10,7 @@ def radial_profile(data, center):
     tbin = np.bincount(r.ravel(), data.ravel())
     nr = np.bincount(r.ravel())
     radialprofile = tbin / nr
-    return radialprofile 
+    return radialprofile
 
 
 

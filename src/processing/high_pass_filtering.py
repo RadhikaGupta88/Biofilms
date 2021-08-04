@@ -1,7 +1,6 @@
+from include import *
 from scipy import ndimage
 from skimage import filters
-from include import *
-
 
 #stack_b = imread('c:/Cambridge/Mechanics of biofilm/original videos/200920_biolight_orginal.tif')
 #stack_n = imread('c:/Cambridge/Mechanics of biofilm/original videos/200920_normallight_orginal.tif')

@@ -1,7 +1,10 @@
-from include import *
-from marching_squares import marching_squares_contours
+import matplotlib.pyplot as plt
+import numpy as np
+from skimage.io import imread
+from src.marching_squares import marching_squares_contours
+from src.constants import BUCKLING_PATH
 
-img1 = imread('c:/Cambridge/Mechanics_of_biofilm/algorithm for clear images/200920_biolight_marching_binary.tif')[200]
+img1 = imread(BUCKLING_PATH / "200920_biolight_marching_binary.tif")[200]
 
 contours = marching_squares_contours(img1, threshold = 50, max_length = 20)
 contours = contours[::300]

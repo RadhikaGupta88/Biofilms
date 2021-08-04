@@ -1,11 +1,15 @@
-from include import *
 import scipy
+import numpy as np
+import matplotlib.pyplot as plt 
+from skimage.io import imread
 
-PATH = 'c:/Cambridge/Mechanics_of_biofilm/algorithm for clear images/buckling/'
+from src.constants import BUCKLING_PATH
+
+#PATH = 'c:/Cambridge/Mechanics_of_biofilm/algorithm for clear images/buckling/'
 #img1 = imread(PATH + '200920_normallight_nobg_edges_gaussblur_enhance_inverted.tif')[int(130*1.403726708)]
 
-img1 = imread(PATH + '200920_biolight_nobg_nooutliers_despeckle_enhance.tif')[130]
-img2 = imread(PATH + '200920_biolight_nobg_nooutliers_despeckle_enhance.tif')[140]
+img1 = imread(BUCKLING_PATH / '200920_biolight_nobg_nooutliers_despeckle_enhance.tif')[130]
+img2 = imread(BUCKLING_PATH / '200920_biolight_nobg_nooutliers_despeckle_enhance.tif')[140]
 
 img3  = scipy.ndimage.rotate(img1, 90)
 #data = scipy.signal.correlate2d(img1, img2)

@@ -1,10 +1,11 @@
 
-from include import *
-import numpy as np
+import random
+
 import matplotlib.pyplot as plt
+import numpy as np
+from include import *
 from radius_vs_intensity import txt_to_list
 from skimage import measure
-import random
 
 #r = imread('c:/Cambridge/Mechanics_of_biofilm/algorithm for clear images/200920_biolight_marching_binary.tif')
 #r = imread('c:/Cambridge/Mechanics_of_biofilm/algorithm for clear images/buckling/200920_normallight_nobg_edges_gaussblur_enhance_inverted.tif')

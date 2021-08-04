@@ -1,11 +1,10 @@
-import numpy as np
-import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
-from scipy.ndimage.filters import gaussian_filter
+import matplotlib.pyplot as plt
+import numpy as np
 import pandas
-from matplotlib.widgets import Slider, Button
-
 import plotly.express as px
+from matplotlib.widgets import Button, Slider
+from scipy.ndimage.filters import gaussian_filter
 
 img1 = mpimg.imread('test_biolum.jpg')
 img2 = mpimg.imread('test_bright.jpg')

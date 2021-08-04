@@ -1,7 +1,7 @@
 
 from include import *
-from labelled_regions import label_regions, characterise_regions, create_contours
-
+from labelled_regions import (characterise_regions, create_contours,
+                              label_regions)
 
 
 def plot_all_segments(stack, slice_no):

@@ -1,11 +1,10 @@
-import numpy as np
-import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
-from scipy.ndimage.filters import gaussian_filter
+import matplotlib.pyplot as plt
+import numpy as np
 import pandas
-from matplotlib.widgets import Slider, Button
+from matplotlib.widgets import Button, Slider
+from scipy.ndimage.filters import gaussian_filter
 from skimage import io
-
 
 img1 = mpimg.imread('test_biolum.jpg')
 img2 = mpimg.imread('test_bright.jpg')

@@ -1,12 +1,12 @@
-import numpy as np
-import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
-from scipy.ndimage.filters import gaussian_filter
+import matplotlib.pyplot as plt
+import numpy as np
 import pandas
-from matplotlib.widgets import Slider, Button
 from matplotlib.ticker import FormatStrFormatter
-
+from matplotlib.widgets import Button, Slider
+from scipy.ndimage.filters import gaussian_filter
 from total_image_intensity import *
+
 
 def txt_to_list(name):
 

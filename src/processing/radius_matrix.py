@@ -1,7 +1,6 @@
 from include import *
 from skimage import data
 
-
 PATH = 'c:/Cambridge/Mechanics_of_biofilm/algorithm for clear images/buckling/'
 #img1 = imread(PATH + '200920_normallight_nobg_edges_gaussblur_enhance_inverted.tif')[int(130*1.403726708)]
 

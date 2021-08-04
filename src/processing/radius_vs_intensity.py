@@ -1,27 +1,15 @@
-import numpy as np
 import math
-import matplotlib.pyplot as plt
-import matplotlib.image as mpimg
-from scipy.ndimage.filters import gaussian_filter
-#import pandas
-from matplotlib.widgets import Slider, Button
-from matplotlib.ticker import FormatStrFormatter
 
+import matplotlib.image as mpimg
+import matplotlib.pyplot as plt
+import numpy as np
+from matplotlib.ticker import FormatStrFormatter
+#import pandas
+from matplotlib.widgets import Button, Slider
+from scipy.ndimage.filters import gaussian_filter
 from total_image_intensity import *
 
-def txt_to_list(name):
-
-    with open('C:/Cambridge/Mechanics_of_biofilm/George algorithm/Data_Storage/200920/' + str(name)) as f:
-        contents = [line.split(',') for line in f]
-
-    rows = len(contents)
-    contents = np.array(contents).reshape(rows, 4)
-    timestamps = list(np.float_(contents[1:,0]))
-    radii = list(np.float_(contents[1:,1]))
-    x_centre = list(np.float_(contents[1:,2]))
-    y_centre = list(np.float_(contents[1:,3]))
-
-    return timestamps, radii, x_centre, y_centre
+from src.processing.txt_loading import txt_to_list
 
 
 def plot_radius_vs_intensity():

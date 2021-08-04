@@ -1,14 +1,14 @@
-from include import *
-from skimage import io
-from skimage import measure
+
+import imageio
+import matplotlib.pyplot as plt
+import numpy as np
+import tifffile
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 from matplotlib.figure import Figure
 from PIL import Image
-
-import tifffile
-import imageio
+from skimage import measure
+from skimage.io import imread
 from tifffile import imwrite
-
 
 #img1 = imread('c:/Cambridge/Mechanics of biofilm/algorithm for clear images/200920_biolight_marching_edges.tif')[150]
 #img1 = imread('c:/Cambridge/Mechanics of biofilm/algorithm for clear images/200920_biolight_marching_binary.tif')
