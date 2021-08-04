@@ -9,3 +9,10 @@ SRC_PATH = pathlib.Path(os.path.dirname(constants_path))
 PROJECT_PATH = pathlib.Path(os.path.dirname(SRC_PATH))
 
 DATA_PATH = PROJECT_PATH / "Data"
+
+if os.name == "nt":  # if running windows
+    MECHANICS_OF_BIOFILM_PATH = pathlib.Path('c:/Cambridge/Mechanics_of_biofilm')
+elif os.name == "posix":  # if running linux
+    MECHANICS_OF_BIOFILM_PATH = pathlib.Path("/mnt/c/Cambridge/Mechanics_of_biofilm")
+
+BUCKLING_PATH = MECHANICS_OF_BIOFILM_PATH / "algorithm for clear images" / "buckling"
