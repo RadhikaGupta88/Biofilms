@@ -21,3 +21,17 @@ def order_coords(disk_y_coords, disk_x_coords, disk_values, center):
     sorted_stack = stack[:,stack[3,:].argsort()]
     return sorted_stack
 
+
+def create_radius_select_stack(image, center_fitted, target_radius, tolerance=0.5):
+    """
+    Input: image, centre of biofilm, radius for selection, tolerance
+    Output: an array consisting of 4 rows
+            row 1 - x coords of selected circle
+            row 2 - y coords of selected circle
+            row 3 - pixel values of selected circle
+            row 4 - phi values of selected circle - angle between point and positive x axis
+    """
+    disk_x_y_vals = np.array(radial_select(image, center_fitted, target_radius, tolerance))
+    stack = order_coords(disk_x_y_vals[0], disk_x_y_vals[1], disk_x_y_vals[2], center_fitted)
+    return stack
+

@@ -16,3 +16,4 @@ elif os.name == "posix":  # if running linux
     MECHANICS_OF_BIOFILM_PATH = pathlib.Path("/mnt/c/Cambridge/Mechanics_of_biofilm")
 
 BUCKLING_PATH = MECHANICS_OF_BIOFILM_PATH / "algorithm for clear images" / "buckling"
+EDGE_TRACKING_PATH = MECHANICS_OF_BIOFILM_PATH  / "George algorithm" / "Data_Storage" / "200920" 

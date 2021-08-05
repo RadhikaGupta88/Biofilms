@@ -62,6 +62,8 @@ def characterise_both_biofilm_images(stack_n, stack_b, slice_no_b):
     coords_n = create_contours(img_n, 0)
     coords_b = create_contours(img_b, 50)
 
+    plt.figure(figsize=(10, 10), dpi=80)
+
     for coords in coords_n:
         plt.plot(coords[:, 1], coords[:, 0], 'ro', ms=0.1)
 

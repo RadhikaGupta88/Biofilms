@@ -47,6 +47,7 @@ def characterise_regions(image, labelled_image, lower_contour_bound = 50, upper_
     #print('image shape passed: ', np.shape(image))
     total_area = 0
     area_list = []
+    plt.figure(figsize=(10, 10), dpi=80)
     for prop in props:
         coords = prop.coords
         #weighted_centroid = prop.weighted_centroid
