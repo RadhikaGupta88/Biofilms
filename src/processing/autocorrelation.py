@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt 
 from skimage.io import imread
 
-from src.constants import BUCKLING_PATH
+from src.processing.constants import BUCKLING_PATH
 
 #PATH = 'c:/Cambridge/Mechanics_of_biofilm/algorithm for clear images/buckling/'
 #img1 = imread(PATH + '200920_normallight_nobg_edges_gaussblur_enhance_inverted.tif')[int(130*1.403726708)]

@@ -1,4 +1,6 @@
-from include import *
+from skimage.io import imread
+import numpy as np
+import matplotlib.pyplot as plt
 
 #
 # stack_b = imread('c:/Cambridge/Mechanics of biofilm/algorithm for clear images/biolight_gb.tif')

@@ -1,5 +1,5 @@
 import numpy as np
-from src.constants import MECHANICS_OF_BIOFILM_PATH
+from src.processing.constants import MECHANICS_OF_BIOFILM_PATH
 
 def txt_to_list(name):
 

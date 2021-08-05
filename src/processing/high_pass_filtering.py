@@ -1,6 +1,9 @@
-from include import *
 from scipy import ndimage
+import numpy as np
+import matplotlib.pyplot as plt
 from skimage import filters
+from skimage.io import imread
+from scipy.ndimage.filters import gaussian_filter
 
 #stack_b = imread('c:/Cambridge/Mechanics of biofilm/original videos/200920_biolight_orginal.tif')
 #stack_n = imread('c:/Cambridge/Mechanics of biofilm/original videos/200920_normallight_orginal.tif')

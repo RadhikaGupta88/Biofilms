@@ -1,26 +1,24 @@
 import matplotlib.image as mpimg
 import matplotlib.pyplot as plt
 import numpy as np
-#import pandas
 from matplotlib.widgets import Button, Slider
 from scipy.ndimage.filters import gaussian_filter
-from skimage import io
+from skimage.io import imread
 
-#import plotly.express as px
 
-img1 = mpimg.imread('test_biolum.jpg')
-img2 = mpimg.imread('test_bright.jpg')
+img1 = imread('test_biolum.jpg')
+img2 = imread('test_bright.jpg')
 
-img3 = mpimg.imread('adjusted biolum.jpg')
+img3 = imread('adjusted biolum.jpg')
 img3 = gaussian_filter(img3, sigma=1)
 rows3, columns3 = np.shape(img3)
 
-img4 = mpimg.imread('adjusted brightfield.jpg')
+img4 = imread('adjusted brightfield.jpg')
 img4 = gaussian_filter(img4, sigma=1)
 
 
-img3 = 0.5*io.imread('c:/Cambridge/Mechanics_of_biofilm/algorithm for clear images/200920_biolight_nobg_nooutliers_despeckle_enhance.tif')[150]
-img4 = 0.9*io.imread('c:/Cambridge/Mechanics_of_biofilm/algorithm for clear images/200920_normallight_nobg_edges_gaussblur_enhance.tif')[150]
+img3 = 0.5*imread('c:/Cambridge/Mechanics_of_biofilm/algorithm for clear images/200920_biolight_nobg_nooutliers_despeckle_enhance.tif')[150]
+img4 = 0.9*imread('c:/Cambridge/Mechanics_of_biofilm/algorithm for clear images/200920_normallight_nobg_edges_gaussblur_enhance.tif')[150]
 img3 = gaussian_filter(img3, sigma=1)
 img4 = gaussian_filter(img4, sigma=1)
 def intensity_profile_interactive(biolum,bright,row,low=0, high=1388):

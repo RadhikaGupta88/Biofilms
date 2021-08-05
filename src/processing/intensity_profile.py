@@ -1,18 +1,17 @@
-import matplotlib.image as mpimg
 import matplotlib.pyplot as plt
 import numpy as np
-import pandas
 from matplotlib.widgets import Button, Slider
 from scipy.ndimage.filters import gaussian_filter
-from skimage import io
+from skimage.io import imread
 
-img1 = mpimg.imread('test_biolum.jpg')
-img2 = mpimg.imread('test_bright.jpg')
 
-img3 = mpimg.imread('adjusted biolum.jpg')
+img1 = imread('test_biolum.jpg')
+img2 = imread('test_bright.jpg')
+
+img3 = imread('adjusted biolum.jpg')
 #img3 = gaussian_filter(img3, sigma=3)
 
-img4 = mpimg.imread('adjusted brightfield.jpg')
+img4 = imread('adjusted brightfield.jpg')
 #img4 = gaussian_filter(img4, sigma=3)
 
 #img3 = io.imread('c:/Cambridge/Mechanics_of_biofilm/algorithm for clear images/buckling/biolight_gb.tif')[200]
@@ -78,7 +77,7 @@ row_slider = Slider(axSlider, 'row', valmin=1, valmax=1039, valstep=1)
 def val_update(val):
     row = row_slider.val
     bio_plot.set_ydata(intensity_profile_interactive(img3, img4, row)[1])
-    bright_plot.set_ydata(intensity_profile_interactive(img3, img4, row)[2])
+    #bright_plot.set_ydata(intensity_profile_interactive(img3, img4, row)[2])
     plt.draw()
 
 row_slider.on_changed(val_update)

@@ -1,4 +1,8 @@
-from include import *
+import matplotlib.pyplot as plt
+import numpy as np
+
+from skimage.io import imread
+
 
 img1 = imread('c:/Cambridge/Mechanics of biofilm/algorithm for clear images/200920_biolight_nobg_nooutliers_despeckle_enhance.tif')[150]
 img2 = imread('c:/Cambridge/Mechanics of biofilm/algorithm for clear images/200920_biolight_nobg_nooutliers_despeckle_enhance.tif')[160]

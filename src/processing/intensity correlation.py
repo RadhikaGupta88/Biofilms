@@ -1,15 +1,15 @@
 import matplotlib.image as mpimg
 import matplotlib.pyplot as plt
 import numpy as np
+from skimage.io import imread
+import skimage.filters as filters
 import skimage
-from include import *
-from skimage import io
 
 #img1 = io.imread('c:/Cambridge/Mechanics of biofilm/algorithm for clear images/200920_biolight_nobg_nooutliers_despeckle_enhance.tif')[200]
 #img1_flat = np.array(img1).flatten().tolist()
 #img2= io.imread('c:/Cambridge/Mechanics of biofilm/algorithm for clear images/200920_normallight_nobg_edges_gaussblur_enhance.tif')[200]
 #img2_flat = np.array(img2).flatten().tolist()
-img1 = mpimg.imread('adjusted biolum.jpg')
+img1 = imread('adjusted biolum.jpg')
 # img1 = mpimg.imread('test_biolum.jpg')
 # img1 = img1[:,60,0]
 img1_flat = img1[300]

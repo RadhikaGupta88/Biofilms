@@ -1,8 +1,8 @@
 import matplotlib.pyplot as plt
 import numpy as np
 from skimage.io import imread
-from src.marching_squares import marching_squares_contours
-from src.constants import BUCKLING_PATH
+from src.processing.marching_squares import marching_squares_contours
+from src.processing.constants import BUCKLING_PATH
 
 img1 = imread(BUCKLING_PATH / "200920_biolight_marching_binary.tif")[200]
 

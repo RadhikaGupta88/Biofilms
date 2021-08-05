@@ -1,6 +1,7 @@
+import matplotlib.pyplot as plt
+from skimage.io import imread
 
-from include import *
-from labelled_regions import (characterise_regions, create_contours,
+from src.processing.labelled_regions import (characterise_regions, create_contours,
                               label_regions)
 
 
