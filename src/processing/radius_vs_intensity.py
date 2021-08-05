@@ -1,14 +1,12 @@
 import math
-
 import matplotlib.image as mpimg
 import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.ticker import FormatStrFormatter
-#import pandas
 from matplotlib.widgets import Button, Slider
 from scipy.ndimage.filters import gaussian_filter
-from total_image_intensity import *
 
+from src.processing.total_image_intensity import *
 from src.processing.txt_loading import txt_to_list
 
 

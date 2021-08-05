@@ -1,24 +1,24 @@
 
-import random
-
 import matplotlib.pyplot as plt
 import numpy as np
-from include import *
-from radius_vs_intensity import txt_to_list
 from skimage import measure
+from skimage.io import imread
+
+from src.processing.radius_vs_intensity import txt_to_list
+
 
 #r = imread('c:/Cambridge/Mechanics_of_biofilm/algorithm for clear images/200920_biolight_marching_binary.tif')
 #r = imread('c:/Cambridge/Mechanics_of_biofilm/algorithm for clear images/buckling/200920_normallight_nobg_edges_gaussblur_enhance_inverted.tif')
-r = imread('c:/Cambridge/Mechanics_of_biofilm/algorithm for clear images/buckling/200920_biolight_nobg_nooutliers_despeckle_enhance.tif')
+#r = imread('c:/Cambridge/Mechanics_of_biofilm/algorithm for clear images/buckling/200920_biolight_nobg_nooutliers_despeckle_enhance.tif')
 #r = imread('c:/Cambridge/Mechanics_of_biofilm/algorithm for clear images/200920_normallight_nobg_inverted.tif')
-
-# Coordinates of point of interest
-#pt = [(49,75)]
 
 
 def label_regions(image, threshold_low, threshold_high = 255, plot= False):
+    """
+    Creates as labelled image from an unlabelled one
+    """
     blobs = image
-    blobs = blobs > threshold_low
+    blobs = blobs > threshold_low #clip array at the low threshold
     #blobs[blobs <= threshold_low] = 0
     #blobs[blobs >= threshold_high] = 0
     blobs_labels = measure.label(blobs, background = 0)
@@ -81,7 +81,7 @@ def characterise_regions(image, labelled_image, lower_contour_bound = 50, upper_
 #total_area, average_area = characterise_regions(slice, img, 0, 10000000000, plot=True)
 #r = r[::50]
 
-
+'''
 lit_areas = []
 average_areas = []
 for slice in r:
@@ -106,7 +106,7 @@ plt.xlabel('Hours')
 plt.ylabel('Fraction of biofilm luminescing')
 plt.show()
 
-
+'''
 
 #--------------------------------------------------------------------------
 #------------------------------------------------------------------------internet code
