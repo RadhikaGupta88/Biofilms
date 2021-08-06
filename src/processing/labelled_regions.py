@@ -32,6 +32,10 @@ def label_regions(image, threshold_low, threshold_high = 255, plot= False):
 
 
 def create_contours(labelled_image, lower_contour_bound = 50, upper_contour_bound = 10000000000):
+
+    """
+    creates regions from labelled image and returns coordinate lists for region edges
+    """
     all_props = measure.regionprops(labelled_image)
     coord_list = []
     for prop in all_props:

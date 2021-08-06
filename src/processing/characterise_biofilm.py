@@ -6,7 +6,7 @@ from src.processing.labelled_regions import (characterise_regions, create_contou
 from src.processing.radius_vs_intensity import txt_to_list
 from src.processing.constants import BUCKLING_PATH
 
-def characterise_biofilm_image(stack, slice_no, type = 0):
+def characterise_biofilm_image(stack, slice_no, type = 0, label_threshold = 50):
 
     """
     Takes a tif stack, either biolight or brightfield, and given a particular slice number,
@@ -18,13 +18,13 @@ def characterise_biofilm_image(stack, slice_no, type = 0):
 
     if type == 0:
         film = 'Brightfield'
-        img = label_regions(slice, 15)
+        img = label_regions(slice, label_threshold)
         lit_area, average_area = characterise_regions(slice, img, 20, plot = True)
         timestamps, radii, x_centres, y_centres = txt_to_list('200920_normallight_fitted_circle_position_data.txt')
 
     if type == 1:
         film = 'Bioluminescence'
-        img = label_regions(slice, 50)
+        img = label_regions(slice, label_threshold)
         lit_area, average_area = characterise_regions(slice, img, 50, plot = True)
         timestamps, radii, x_centres, y_centres = txt_to_list('200920_biolight_fitted_circle_position_data.txt')
     

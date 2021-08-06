@@ -17,3 +17,4 @@ elif os.name == "posix":  # if running linux
 
 BUCKLING_PATH = MECHANICS_OF_BIOFILM_PATH / "algorithm for clear images" / "buckling"
 EDGE_TRACKING_PATH = MECHANICS_OF_BIOFILM_PATH  / "George algorithm" / "Data_Storage" / "200920" 
+NEW_MOVIE_PATH = MECHANICS_OF_BIOFILM_PATH  / "algorithm for clear images" / "new_movies" 

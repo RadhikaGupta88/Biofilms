@@ -1,4 +1,6 @@
 import numpy as np
+import matplotlib.pyplot as plt
+from scipy.signal import find_peaks
 
 def radial_select(image, center, target_radius, tolerance=1.):
     y, x = np.indices((image.shape))
@@ -35,3 +37,22 @@ def create_radius_select_stack(image, center_fitted, target_radius, tolerance=0.
     stack = order_coords(disk_x_y_vals[0], disk_x_y_vals[1], disk_x_y_vals[2], center_fitted)
     return stack
 
+
+
+
+def find_period_radial_select(stack, plot=False):
+    data = stack[2]
+    auto_correlation = np.correlate(data, data, mode='same')
+    lags = np.arange(-len(auto_correlation)/2, len(auto_correlation)/2)
+
+    peaks, _ = find_peaks(auto_correlation, height=0)
+    second_maximum = np.sort(auto_correlation[peaks])[-2]
+    index = np.where(auto_correlation == second_maximum)[0]
+    period = lags[index[1]]
+
+    if plot == True:
+        plt.figure(figsize=(20, 10), dpi=80)
+        plt.plot(lags, auto_correlation)
+        plt.plot(lags[peaks], auto_correlation[peaks], "x")
+        plt.show()
+    return period
