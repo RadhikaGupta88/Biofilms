@@ -1,27 +1,25 @@
-import scipy
 import numpy as np
 import matplotlib.pyplot as plt 
-from skimage.io import imread
 
 from src.processing.constants import BUCKLING_PATH
 
-#PATH = 'c:/Cambridge/Mechanics_of_biofilm/algorithm for clear images/buckling/'
-#img1 = imread(PATH + '200920_normallight_nobg_edges_gaussblur_enhance_inverted.tif')[int(130*1.403726708)]
+def autocorrelate_single_value(data, lag):
+    """
+    Returns the normalized autocorrelation for a list of data given a specific lag
+    """
+    return np.corrcoef(data, np.concatenate([data[lag:], data[:lag]]))[0,1]
 
-img1 = imread(BUCKLING_PATH / '200920_biolight_nobg_nooutliers_despeckle_enhance.tif')[130]
-img2 = imread(BUCKLING_PATH / '200920_biolight_nobg_nooutliers_despeckle_enhance.tif')[140]
 
-img3  = scipy.ndimage.rotate(img1, 90)
-#data = scipy.signal.correlate2d(img1, img2)
-#plt.plot(data)
-#plt.acorr(img1)
-fig, (ax1, ax2) = plt.subplots(1,2)
-#ax1.imshow(img1)
-#ax2.imshow(scipy.ndimage.rotate(img1, 45))
-
-#plt.show()
-
-#data = scipy.signal.correlate2d(img3, img3)
-
-print(np.shape(img1))
-print(np.shape(img3))
+def autocorrelate_radial_ring(ring_data, plot = False):
+    """
+    returns list of lags and list of autocorrelation values for each lag, given the input 1D array
+    """
+    lags = np.arange(0, len(ring_data), 1)
+    autocorrelation_normalized = [autocorrelate_single_value(ring_data,lag) for lag in range(0, len(ring_data))]
+    if plot == True:
+        plt.figure(figsize=(20, 10), dpi=80)
+        plt.plot(lags, autocorrelation_normalized)
+        plt.ylabel('Normalized autocorrelation')
+        plt.xlabel('lag (pixels)')
+        plt.show()
+    return lags, autocorrelation_normalized
