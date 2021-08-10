@@ -3,6 +3,9 @@ import matplotlib.pyplot as plt
 from scipy.signal import find_peaks
 
 def radial_select(image, center, target_radius, tolerance=1.):
+    """
+    Returns the (x, y) coords and pixel values of a circle taken from a given image at a set target radius.
+    """
     y, x = np.indices((image.shape))
     pixel_radius = np.sqrt((x - center[0])**2 
                            + (y - center[1])**2
@@ -18,6 +21,10 @@ def radial_select(image, center, target_radius, tolerance=1.):
 
 
 def order_coords(disk_y_coords, disk_x_coords, disk_values, center):
+    """
+    Input: circle's (x, y) coords and values and biofilm center
+    Output: stack of (x, y) coords, pixel vals and phi values sorted by angle around circle
+    """
     disk_phi_coords = (np.arctan2(disk_y_coords - center[1], disk_x_coords - center[0]))
     stack = np.vstack([disk_x_coords, disk_y_coords, disk_values, disk_phi_coords])
     sorted_stack = stack[:,stack[3,:].argsort()]
@@ -26,6 +33,7 @@ def order_coords(disk_y_coords, disk_x_coords, disk_values, center):
 
 def create_radius_select_stack(image, center_fitted, target_radius, tolerance=0.5):
     """
+    Uses previous two functions...
     Input: image, centre of biofilm, radius for selection, tolerance
     Output: an array consisting of 4 rows
             row 1 - x coords of selected circle

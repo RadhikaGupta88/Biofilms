@@ -27,20 +27,23 @@ def characterise_biofilm_image(stack, slice_no, type = 0, label_threshold = 50):
         img = label_regions(slice, label_threshold)
         lit_area, average_area = characterise_regions(slice, img, 50, plot = True)
         timestamps, radii, x_centres, y_centres = txt_to_list('200920_biolight_fitted_circle_position_data.txt')
-    
+
     print(f"{film} image, slice {slice_no}/{len(stack)}")
 
     timestamp = timestamps[slice_no]
     radius = radii[slice_no]
     x_centre = x_centres[slice_no]
     y_centre = y_centres[slice_no]
-    coffe_ring_radius = 0 #for once this is programmed
+    coffee_ring_radius = radii[0]
+
+    coffee_ring_radius_fraction = coffee_ring_radius/radius
 
     print(f'Timestamp: {timestamp}')
     print(f'Total lit area: {lit_area}')
     print(f'Fraction of biofilm lit: {lit_area/(math.pi*radius**2)}')
     print(f'Average area of lit region: {average_area}')
-    print(f'Biofilm radius: {radius}\n'.format(radius))
+    print(f'Biofilm radius: {radius}')
+    print(f'Coffe ring radius: {coffee_ring_radius_fraction} x biofilm radius\n')
 
 
 
