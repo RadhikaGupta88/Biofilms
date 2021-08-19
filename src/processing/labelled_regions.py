@@ -3,8 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from skimage import measure
 from skimage.io import imread
-
-from src.processing.radius_vs_intensity import txt_to_list
+from src.processing.txt_loading import txt_to_list
 
 
 #r = imread('c:/Cambridge/Mechanics_of_biofilm/algorithm for clear images/200920_biolight_marching_binary.tif')
