@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import math
 from skimage.io import imread
 from src.processing.labelled_regions import (characterise_regions, create_contours, label_regions)
-from src.processing.radius_vs_intensity import txt_to_list
+from src.processing.txt_loading import txt_to_list
 from src.processing.constants import BUCKLING_PATH
 
 def characterise_biofilm_image(stack, slice_no, type = 0, label_threshold = 50):
