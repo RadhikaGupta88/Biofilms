@@ -1,6 +1,7 @@
 from skimage.io import imread
 import numpy as np
 import matplotlib.pyplot as plt
+from matplotlib.widgets import Slider
 
 #
 # stack_b = imread('c:/Cambridge/Mechanics of biofilm/algorithm for clear images/biolight_gb.tif')
