@@ -1,4 +1,4 @@
-from setuptools import find_packages, setup
+from setuptools import setup
 
 setup(
     name="src",
@@ -7,5 +7,5 @@ setup(
     author_email="radhikagupta1378@gmail.com",
     description="Biofilm project package",
     url="https://github.com/RadhikaGupta88/Biofilms",
-    packages=find_packages(),
+    packages=['src.processing'],
 )
