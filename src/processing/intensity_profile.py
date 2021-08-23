@@ -5,17 +5,17 @@ from scipy.ndimage.filters import gaussian_filter
 from skimage.io import imread
 
 
-img1 = imread('test_biolum.jpg')
-img2 = imread('test_bright.jpg')
+# img1 = imread('test_biolum.jpg')
+# img2 = imread('test_bright.jpg')
 
-img3 = imread('adjusted biolum.jpg')
+#img3 = imread('adjusted biolum.jpg')
 #img3 = gaussian_filter(img3, sigma=3)
 
-img4 = imread('adjusted brightfield.jpg')
+#img4 = imread('adjusted brightfield.jpg')
 #img4 = gaussian_filter(img4, sigma=3)
 
-#img3 = io.imread('c:/Cambridge/Mechanics_of_biofilm/algorithm for clear images/buckling/biolight_gb.tif')[200]
-#img4 = io.imread('c:/Cambridge/Mechanics_of_biofilm/algorithm for clear images/buckling/normallight_edge_gb.tif')[200]
+img3 = imread('c:/Cambridge/Mechanics_of_biofilm/algorithm for clear images/buckling/biolight_gb.tif')[200]
+img4 = imread('c:/Cambridge/Mechanics_of_biofilm/algorithm for clear images/buckling/normallight_edge_gb.tif')[200]
 
 
 def intensity_profile(biolum,bright,row,low=0, high=1388):
