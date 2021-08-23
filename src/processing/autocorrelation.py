@@ -1,10 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-from scipy.ndimage import gaussian_filter
-from scipy.signal import find_peaks
-
-from src.processing.constants import BUCKLING_PATH
 
 def autocorrelate_single_value(data, lag):
     """

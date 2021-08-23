@@ -71,12 +71,6 @@ def val_update(val):
 
 row_slider.on_changed(val_update)
 
-#plt.title('Intensity profile',  y=14)
+plt.title('Intensity profile',  y=14)
 plt.show()
 
-#intensity_profile(img1,img2,800)
-#intensity_profile(img3,img4,700)
-#intensity_profile_interactive(img3,img4,700)
-
-# axSlider = plt.axes([0.1, 0.2, 0.8, 0.05])
-# row_slider = Slider(axSlider, 'row', valmin=1, valmax=1040)

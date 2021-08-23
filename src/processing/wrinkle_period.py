@@ -61,7 +61,7 @@ def find_period_autocorrelation_fft(autocorrelation, gaussian_sigma = 1, plot=Fa
 
 def periods_from_image(image, circle_radius, circle_centre, tolerance=0.5):
     """
-    Returns period in pixels and degrees given an input image
+    Returns period in pixels and degrees given an input image and circle radius
     """
     stack = create_radius_select_stack(image, circle_centre,  circle_radius, tolerance)
     data = stack[2]
