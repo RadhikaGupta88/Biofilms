@@ -3,6 +3,10 @@ from src.processing.constants import MECHANICS_OF_BIOFILM_PATH
 
 def txt_to_list(name):
 
+    """
+    Converts txt data from edge tracking algorithm output into 4 different lists
+    """
+
     with open(MECHANICS_OF_BIOFILM_PATH / 'George algorithm/Data_Storage/200920' /  str(name)) as f:
         contents = [line.split(',') for line in f]
 

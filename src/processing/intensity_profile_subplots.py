@@ -78,4 +78,10 @@ axSlider = plt.axes([0.1, 0.2, 0.8, 0.05])
 row_slider = Slider(axSlider, 'row', valmin=1, valmax=1039, valstep=1)
 row_slider.on_changed(val_update)
 
+<<<<<<< HEAD
 plt.show()
+=======
+plt.title('Intensity profile',  y=14)
+plt.show()
+
+>>>>>>> main

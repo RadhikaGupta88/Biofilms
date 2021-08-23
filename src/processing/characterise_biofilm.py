@@ -1,20 +1,33 @@
 
 import matplotlib.pyplot as plt
 import math
+<<<<<<< HEAD
 from skimage.io import imread
 from src.processing.labelled_regions import (characterise_regions, create_contours, label_regions)
 from src.processing.txt_loading import txt_to_list
 from src.processing.constants import BUCKLING_PATH
+=======
+from src.processing.labelled_regions import characterise_regions, create_contours, label_regions
+from src.processing.radius_vs_intensity import txt_to_list
+>>>>>>> main
 
 def characterise_biofilm_image(stack, slice_no, type = 0, label_threshold = 50):
 
     """
     Takes a tif stack, either biolight or brightfield, and given a particular slice number,
     returns properties such as the average lit area and average area of lit region, etc.
+
+    Note: biofilm areas are taken from edge tracking algorithm outputs performed on the high density
+    buckling vidoes. These will not be valid for other movies.
+
+    Set slice_no to None, if you want to input a single image from a stack.
     """
 
     #type 0 is brightfield and type 1 is biolum
-    slice = stack[slice_no]
+    if slice_no == None:
+        slice = stack
+    else:
+        slice = stack[slice_no]
 
     if type == 0:
         film = 'Brightfield'
