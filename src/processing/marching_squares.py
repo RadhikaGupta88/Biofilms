@@ -6,7 +6,7 @@ import tifffile
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 from matplotlib.figure import Figure
 from PIL import Image
-from skimage import measure
+from skimage import measure, color
 from skimage.io import imread
 from tifffile import imwrite
 
