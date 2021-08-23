@@ -6,6 +6,6 @@ setup(
     author="Radhika Gupta",
     author_email="radhikagupta1378@gmail.com",
     description="Biofilm project package",
-    url="https://github.com/RadhikaGupta88/Biofilms",
+    url="url-to-github-page",
     packages=find_packages(),
 )
