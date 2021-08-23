@@ -43,7 +43,7 @@ def characterise_biofilm_image(stack, slice_no, type = 0, label_threshold = 50):
     print(f'Fraction of biofilm lit: {lit_area/(math.pi*radius**2)}')
     print(f'Average area of lit region: {average_area}')
     print(f'Biofilm radius: {radius}')
-    print(f'Coffe ring radius: {coffee_ring_radius_fraction} x biofilm radius\n')
+    print(f'Coffee ring radius: {coffee_ring_radius_fraction} x biofilm radius\n')
 
 
 
