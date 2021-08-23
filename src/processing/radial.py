@@ -48,6 +48,8 @@ def create_radius_select_stack(image, center_fitted, target_radius, tolerance=0.
 
 
 
+# finding the period from second highest peak of autocorrelation graph
+# function not in use - left here for reference
 def find_period_radial_select(stack, plot=False):
     data = stack[2]
     auto_correlation = np.correlate(data, data, mode='same')
