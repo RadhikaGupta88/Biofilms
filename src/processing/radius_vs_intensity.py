@@ -20,16 +20,20 @@ def plot_radius_vs_intensity(bio_stack, normallight_stack):
     radii_b = np.array(radii_b)
     radii_n = np.array(radii_n)
 
+    plt.figure(figsize=(20,10))
+
     #get image intensities
     raw_intensities_b = np.array(intensity_array_from_stack(bio_stack))
-    raw_intensities_n = np.array(intensity_array_from_stack(normallight_stack))
-
     normalized_intensities_b = raw_intensities_b/(math.pi*2*radii_b**2)
-    normalized_intensities_n = raw_intensities_n/(math.pi*2*radii_n**2)
-
-    plt.figure(figsize=(20,10))
     plt.plot(radii_b, normalized_intensities_b, label='bioluminescence', marker='o')
-    plt.plot(radii_n, normalized_intensities_n, label='brightfield', marker='o')
+
+    if normallight_stack != None:
+        raw_intensities_n = np.array(intensity_array_from_stack(normallight_stack))
+        normalized_intensities_n = raw_intensities_n/(math.pi*2*radii_n**2)
+        plt.plot(radii_n, normalized_intensities_n, label='brightfield', marker='o')
+
+
+
     plt.legend()
     plt.xlabel('Biofilm radius (pixels)')
     plt.ylabel('Area-normalized intensity')
