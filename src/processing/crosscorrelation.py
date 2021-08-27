@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 from src.processing.radial import create_radius_select_stack
 
 
-def crosscorrelation_0_to_j(image_stack, start_slice, stop_slice, x_centres, y_centres, plot=False):
+def crosscorrelation_0_to_j(image_stack, start_slice, stop_slice, x_centres, y_centres, radius, plot=False):
     """
     Calculates the crosscorrelation between one slice and a given number of adjacent slices within a
     given stack, created using the 'create_radius_select_stack' function, and plots.
@@ -18,7 +18,7 @@ def crosscorrelation_0_to_j(image_stack, start_slice, stop_slice, x_centres, y_c
 
     stack_list = []
     for i in range(len(image_array)):
-        coord_stack = create_radius_select_stack(image_array[i], (x_centre, y_centre), 300, 0.5)
+        coord_stack = create_radius_select_stack(image_array[i], (x_centre, y_centre), radius, 0.5)
         data = coord_stack[2]
         stack_list.append(data)
 
