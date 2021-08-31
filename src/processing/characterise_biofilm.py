@@ -1,8 +1,15 @@
 
 import matplotlib.pyplot as plt
 import math
+<<<<<<< HEAD
+from skimage.io import imread
+from src.processing.labelled_regions import (characterise_regions, create_contours, label_regions)
+from src.processing.txt_loading import txt_to_list
+from src.processing.constants import BUCKLING_PATH
+=======
 from src.processing.labelled_regions import characterise_regions, create_contours, label_regions
 from src.processing.radius_vs_intensity import txt_to_list
+>>>>>>> main
 
 def characterise_biofilm_image(stack, slice_no, type = 0, label_threshold = 50):
 
@@ -49,7 +56,7 @@ def characterise_biofilm_image(stack, slice_no, type = 0, label_threshold = 50):
     print(f'Fraction of biofilm lit: {lit_area/(math.pi*radius**2)}')
     print(f'Average area of lit region: {average_area}')
     print(f'Biofilm radius: {radius}')
-    print(f'Coffe ring radius: {coffee_ring_radius_fraction} x biofilm radius\n')
+    print(f'Coffee ring radius: {coffee_ring_radius_fraction} x biofilm radius\n')
 
 
 
